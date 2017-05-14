@@ -3,14 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.faza.project.expertsystemai.Activity.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary" />
+
     <RelativeLayout
-        android:id="@+id/rv_footer"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
         android:paddingStart="@dimen/default_16dp_margin">
 
         <TextView
@@ -19,14 +26,13 @@
             android:layout_centerVertical="true"
             android:text="@string/created_by"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorPrimary" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/rv_footer"
         android:layout_centerInParent="true"
         android:padding="@dimen/default_16dp_margin">
 

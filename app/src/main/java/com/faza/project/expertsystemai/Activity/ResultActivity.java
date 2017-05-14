@@ -2,7 +2,9 @@ package com.faza.project.expertsystemai.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.faza.project.expertsystemai.Application.ExpertSystemAI;
 import com.faza.project.expertsystemai.Model.DiseaseChart;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 
 public class ResultActivity extends AppCompatActivity {
     private ArrayList<CheckBox> checkBoxes;
+    private boolean isHealty = true;
     private double THRESHOLD = 0.6;
 
     @Override
@@ -31,6 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         calculateChild2();
         calculateChild();
         setCheckBoxes();
+        setHealty();
     }
 
     private void calculateChild2() {
@@ -86,10 +90,19 @@ public class ResultActivity extends AppCompatActivity {
 
         for (int index = 0; index < diseaseCharts.size(); index++) {
             checkBoxes.get(index).setText(diseaseCharts.get(index).getName());
-            checkBoxes.get(index).setEnabled(false);
+            checkBoxes.get(index).setClickable(false);
 
-            if (diseaseCharts.get(index).isTrue())
+            if (diseaseCharts.get(index).isTrue()) {
+                isHealty = false;
                 checkBoxes.get(index).setChecked(true);
+            }
         }
+    }
+
+    private void setHealty() {
+        TextView tvResult = (TextView) findViewById(R.id.tv_result);
+
+        if (isHealty)
+            tvResult.setVisibility(View.VISIBLE);
     }
 }

@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">Expert System AI</string>
+    <string name="app_question_name">Expert System AI - Question</string>
+    <string name="app_result_name">Expert System AI - Result</string>
 
     <string name="main_title">Ingin tahu apakah anda terkena infeksi pada sistem gastro-usus ?</string>
     <string name="main_subtitle">Mari cari tahu disini</string>
     <string name="mulai">Mulai</string>
     <string name="created_by">Created By : Faza Zulfika Permana Putra</string>
     <string name="root">Infeksi Sistem Gastro-Usus</string>
+    <string name="back_image_button">Back Image Button</string>
+    <string name="forward_image_button">Forward Image Button</string>
+    <string name="previous_answer">Previous answer : </string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="result">You\'re healthy :)</string>
 
     <string-array name="child">
         <item>Keracunan Staphylococcus Aureus</item>
