@@ -18,6 +18,7 @@ import com.faza.project.expertsystemai.R;
 public class QuestionActivity extends AppCompatActivity {
     private int symptomsIndex, activeSymptomsIndex;
     private int TOTAL_QUESTION = ExpertSystemAI.getSymptoms().size();
+    private ImageButton ibtnBack, ibtnForward;
     private RelativeLayout rlPreviousAnswer;
     private TextView tvStep, tvPreviousAnswer, tvQuestion;
 
@@ -26,8 +27,8 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        ImageButton ibtnBack = (ImageButton) findViewById(R.id.ibtn_back);
-        ImageButton ibtnForward = (ImageButton) findViewById(R.id.ibtn_forward);
+        ibtnBack = (ImageButton) findViewById(R.id.ibtn_back);
+        ibtnForward = (ImageButton) findViewById(R.id.ibtn_forward);
 
         ibtnBack.setOnClickListener(new BackForwardClickListener());
         ibtnForward.setOnClickListener(new BackForwardClickListener());
@@ -69,6 +70,16 @@ public class QuestionActivity extends AppCompatActivity {
                 tvPreviousAnswer.setText(previousAnswer);
             } else
                 rlPreviousAnswer.setVisibility(View.GONE);
+
+            if (activeSymptomsIndex == 0)
+                ibtnBack.setVisibility(View.INVISIBLE);
+            else
+                ibtnBack.setVisibility(View.VISIBLE);
+
+            if (activeSymptomsIndex == symptomsIndex)
+                ibtnForward.setVisibility(View.INVISIBLE);
+            else
+                ibtnForward.setVisibility(View.VISIBLE);
 
             tvStep.setText((activeSymptomsIndex + 1) + " / " + TOTAL_QUESTION);
             tvQuestion.setText(question);

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class DiseaseChart extends SymptomsChart {
     private ArrayList<Integer> subBagan;
+    private double percentage;
 
     public DiseaseChart() {
         this(null);
@@ -30,5 +31,13 @@ public class DiseaseChart extends SymptomsChart {
 
     public void setSubBagan(ArrayList<Integer> subBagan) {
         this.subBagan = subBagan;
+    }
+
+    public double getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(double percentage) {
+        this.percentage = percentage;
     }
 }

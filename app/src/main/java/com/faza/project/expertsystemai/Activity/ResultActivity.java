@@ -58,6 +58,8 @@ public class ResultActivity extends AppCompatActivity {
 
             if (resultPercentage >= THRESHOLD)
                 diseaseChart.setTrue(true);
+
+            diseaseChart.setPercentage(resultPercentage);
         }
     }
 
@@ -82,6 +84,8 @@ public class ResultActivity extends AppCompatActivity {
 
             if (resultPercentage >= THRESHOLD)
                 diseaseChart.setTrue(true);
+
+            diseaseChart.setPercentage(resultPercentage);
         }
     }
 
@@ -89,7 +93,9 @@ public class ResultActivity extends AppCompatActivity {
         ArrayList<DiseaseChart> diseaseCharts = ExpertSystemAI.getChild();
 
         for (int index = 0; index < diseaseCharts.size(); index++) {
-            checkBoxes.get(index).setText(diseaseCharts.get(index).getName());
+            String percentage = String.valueOf((int) (diseaseCharts.get(index).getPercentage() * 100));
+
+            checkBoxes.get(index).setText(diseaseCharts.get(index).getName() + " : " + percentage + "%");
             checkBoxes.get(index).setClickable(false);
 
             if (diseaseCharts.get(index).isTrue()) {
